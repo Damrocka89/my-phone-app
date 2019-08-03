@@ -18,7 +18,7 @@
 <head>
     <link href="webjars/bootstrap/3.4.0/css/bootstrap.min-jsf.css" rel="stylesheet">
 
-    <title>Produkt</title>
+    <title>Koszyk</title>
 </head>
 <body>
 
