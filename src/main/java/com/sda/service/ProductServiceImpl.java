@@ -5,6 +5,7 @@ import com.sda.dao.ProductDaoImpl;
 import com.sda.dao.ProductImageDao;
 import com.sda.dao.ProductImageDaoImpl;
 import com.sda.entity.ProductEntity;
+import com.sda.model.Brand;
 import com.sda.model.Product;
 
 import java.util.List;
@@ -30,6 +31,13 @@ public class ProductServiceImpl implements ProductService {
         String imagePathForProduct = productImageDao.getImagePathForProduct(id);
         return mapToProduct(product, imagePathForProduct);
 
+    }
+
+    @Override
+    public List<Product> getProductsByBrand(List<Brand> brands) {
+        return getProducts().stream()
+                .filter(p->brands.contains(p.getBrand()))
+                .collect(Collectors.toList());
     }
 
 
